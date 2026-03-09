@@ -1,0 +1,321 @@
+:root{
+  /* 野薑花偏綠配色 */
+  --bg:#f4f8f3;
+  --card:#ffffff;
+  --ink:#1f2a22;
+  --muted:#556258;
+  --line:#dfe8df;
+
+  --accent:#2f6a4f;
+  --accent2:#c8a64b;
+
+  --shadow:0 18px 45px rgba(18, 45, 28, .10);
+  --radius:18px;
+  --radius2:28px;
+  --max:1120px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(1100px 700px at 18% 0%, rgba(47,106,79,.14), transparent 58%),
+    radial-gradient(900px 600px at 80% 8%, rgba(200,166,75,.10), transparent 55%),
+    radial-gradient(900px 700px at 55% 120%, rgba(47,106,79,.10), transparent 60%),
+    var(--bg);
+  color:var(--ink);
+  font-family:"Inter","Noto Serif TC", system-ui, -apple-system, "PingFang TC","Microsoft JhengHei", sans-serif;
+  line-height:1.65;
+}
+
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+.section{padding:72px 0}
+.section.tight{padding:48px 0}
+.grid{display:grid; gap:18px}
+.row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+
+.kicker{color:var(--accent); font-weight:900; letter-spacing:.08em; font-size:12px}
+h1,h2,h3{
+  font-family:"Noto Serif TC","Inter", serif;
+  margin:0 0 10px;
+  letter-spacing:.02em;
+}
+h1{font-size:42px; line-height:1.18}
+h2{font-size:30px; line-height:1.25}
+h3{font-size:20px; line-height:1.3}
+
+p{margin:0 0 12px; color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:13px; color:var(--muted)}
+
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  background:rgba(255,255,255,.58);
+  backdrop-filter: blur(8px);
+  font-size:13px;
+  font-weight:800;
+}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:10px; padding:12px 16px; border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.60);
+  backdrop-filter: blur(10px);
+  color:var(--ink);
+  font-weight:800;
+  transition:.2s ease;
+  cursor:pointer;
+  user-select:none;
+}
+.btn:hover{transform:translateY(-1px); box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.btn.primary{
+  background: linear-gradient(180deg, rgba(47,106,79,1), rgba(32,80,60,1));
+  border-color: transparent;
+  color:#fff;
+}
+
+.card{
+  background: rgba(255,255,255,.82);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.pad{padding:18px}
+.divider{height:1px; background:var(--line); margin:18px 0}
+
+.note{
+  padding:14px 16px;
+  border-radius: 14px;
+  background: rgba(200,166,75,.10);
+  border: 1px solid rgba(200,166,75,.22);
+  color: var(--muted);
+  font-weight:700;
+}
+
+/* Header / Nav */
+header{
+  position:sticky; top:0; z-index:50;
+  background: rgba(244,248,243,.72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(223,232,223,.95);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 0;
+  gap:12px;
+}
+.brand{display:flex; align-items:center; gap:10px; font-weight:1000; letter-spacing:.05em}
+.logo{
+  width:36px; height:36px; border-radius:12px;
+  background: conic-gradient(from 210deg, rgba(47,106,79,1), rgba(200,166,75,1), rgba(47,106,79,1));
+  box-shadow: 0 10px 25px rgba(47,106,79,.18);
+}
+
+nav ul{list-style:none; display:flex; gap:16px; padding:0; margin:0}
+nav a{color:var(--muted); font-weight:900; font-size:14px}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink); text-decoration: underline; text-underline-offset: 6px}
+
+.nav-actions{display:flex; gap:10px; align-items:center}
+.mobile-only{display:none}
+
+/* Top Banner (滿版跑馬燈) */
+.top-banner{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  position: relative;
+  overflow: hidden;
+  background:#000;
+  border-bottom: 1px solid rgba(223,232,223,.95);
+}
+.top-banner .carousel-track{
+  display:flex;
+  width:100%;
+  height: clamp(240px, 36vw, 420px);
+  transition: transform .55s ease;
+}
+.top-banner .carousel-slide{min-width:100%; margin:0}
+.top-banner .carousel-slide img{width:100%; height:100%; object-fit:cover; display:block}
+
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:44px; height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(10px);
+  font-size:28px;
+  font-weight:1000;
+  color: var(--ink);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s ease;
+  user-select:none;
+  z-index:3;
+}
+.carousel-btn.prev{left:14px}
+.carousel-btn.next{right:14px}
+.carousel-btn:hover{transform: translateY(-50%) scale(1.03)}
+
+.carousel-dots{
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  gap:8px;
+  z-index:3;
+}
+.carousel-dot{
+  width:10px; height:10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.65);
+  background: rgba(0,0,0,.18);
+  cursor:pointer;
+}
+.carousel-dot.active{
+  background: rgba(47,106,79,.90);
+  border-color: rgba(47,106,79,.55);
+}
+
+/* Image utilities */
+.photo{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  border:1px solid var(--line);
+}
+.photo-grid{display:grid; gap:12px}
+
+/* Ginger lily facts */
+.two{grid-template-columns: 1fr 1fr}
+.facts{display:grid; gap:12px}
+.fact{
+  padding:14px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.65);
+  border:1px solid var(--line);
+}
+.fact b{color:var(--ink)}
+.fact p{margin:6px 0 0}
+
+.placeholder{
+  display:flex; align-items:center; justify-content:center;
+  min-height: 220px;
+  border: 1px dashed rgba(85,98,88,.35);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.45);
+  color: rgba(85,98,88,.85);
+  font-weight:900;
+  text-align:center;
+  padding:18px;
+}
+
+/* Products listing */
+.products{grid-template-columns: 1fr}
+.product-card{
+  display:grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap:18px;
+  align-items:stretch;
+}
+.product-media{padding:18px}
+.product-info{padding:18px}
+.tag{
+  display:inline-flex;
+  font-size:12px; font-weight:1000;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.68);
+  color:var(--accent);
+  margin-bottom:10px;
+}
+.empty{
+  border:1px dashed rgba(85,98,88,.35);
+  border-radius: 14px;
+  padding:12px 12px;
+  color: rgba(85,98,88,.78);
+  background: rgba(255,255,255,.45);
+  font-weight:800;
+  font-size:13px;
+}
+
+/* Order */
+.pricing{grid-template-columns: 1fr 1fr}
+.price{
+  font-size:34px;
+  font-weight:1000;
+  letter-spacing:.02em;
+  margin:6px 0 0;
+}
+.price small{font-size:14px; color:var(--muted); font-weight:900}
+.list{margin:12px 0 0; padding:0; list-style:none}
+.list li{display:flex; gap:10px; align-items:flex-start; margin:8px 0; color:var(--muted)}
+.check{
+  width:18px; height:18px; border-radius:6px;
+  background: rgba(47,106,79,.12);
+  border:1px solid rgba(47,106,79,.22);
+  flex:0 0 auto;
+  margin-top:2px;
+}
+
+/* FAQ */
+details{
+  background: rgba(255,255,255,.74);
+  border:1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+summary{
+  cursor:pointer;
+  font-weight:1000;
+  color:var(--ink);
+  list-style:none;
+}
+summary::-webkit-details-marker{display:none}
+details p{margin:10px 0 0}
+
+/* Footer */
+footer{
+  padding:30px 0 50px;
+  border-top:1px solid rgba(223,232,223,.95);
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(10px);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap:18px;
+}
+.links{display:flex; flex-direction:column; gap:8px}
+.links a{color:var(--muted); font-weight:900; font-size:14px}
+.links a:hover{color:var(--ink)}
+
+/* Responsive */
+@media (max-width: 980px){
+  .two{grid-template-columns:1fr}
+  .product-card{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  h1{font-size:36px}
+}
+@media (max-width: 560px){
+  nav ul{display:none}
+  .mobile-only{display:inline-flex}
+  h1{font-size:32px}
+}
