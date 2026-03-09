@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>聯絡我們｜濃濃香</title>
+  <meta name="description" content="訂購、團購、企業送禮合作聯絡方式。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container"><div class="nav">
+    <a class="brand" href="index.html"><span class="logo"></span><span>濃濃香</span></a>
+    <nav><ul>
+      <li><a href="index.html">關於濃濃香</a></li>
+      <li><a href="products.html">商品口味</a></li>
+      <li><a href="order.html">訂購資訊</a></li>
+      <li><a href="faq.html">常見問題</a></li>
+      <li><a href="contact.html" aria-current="page">聯絡我們</a></li>
+    </ul></nav>
+    <div class="nav-actions">
+      <a class="btn mobile-only" href="order.html">訂購</a>
+      <a class="btn primary" href="order.html">看訂購資訊</a>
+    </div>
+  </div></div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="kicker">Contact</div>
+      <h1>聯絡我們</h1>
+      <p class="muted">你可以把按鈕改成 LINE 官方、IG、或訂購表單連結（沒有資訊先留空）。</p>
+
+      <div class="grid two" style="margin-top:18px">
+        <div class="card pad">
+          <h2>快速聯絡（留空可填）</h2>
+          <div class="divider"></div>
+          <div class="small">LINE：<span class="muted">____________________________</span></div>
+          <div class="small">IG：<span class="muted">____________________________</span></div>
+          <div class="small">訂購表單：<span class="muted">____________________________</span></div>
+
+          <div class="divider"></div>
+          <div class="row">
+            <a class="btn primary" href="#" onclick="alert('把這裡換成 LINE 連結');return false;">LINE 立即詢問</a>
+            <a class="btn" href="#" onclick="alert('把這裡換成 IG 連結');return false;">IG / 口碑作品</a>
+            <a class="btn" href="#" onclick="alert('把這裡換成訂購表單連結');return false;">訂購表單</a>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h2>團購 / 企業送禮</h2>
+          <ul class="list">
+            <li><span class="check"></span>適合：公司下午茶、節慶禮盒、活動贈禮</li>
+            <li><span class="check"></span>請提供：數量、日期、取貨/配送方式、口味偏好</li>
+            <li><span class="check"></span>宅配：滿 NT$2,000 免運</li>
+          </ul>
+          <div class="divider"></div>
+          <div class="small">聯絡窗口（留空）：<span class="muted">____________________________</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container"><div class="small">© <span id="y"></span> 濃濃香</div></div></footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
