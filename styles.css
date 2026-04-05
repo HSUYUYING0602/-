@@ -220,6 +220,117 @@ nav a[aria-current="page"]{color:var(--ink); text-decoration: underline; text-un
 .fact b{color:var(--ink)}
 .fact p{margin:6px 0 0}
 
+.card-hover{
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+.card-hover:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(18, 45, 28, .14);
+}
+.card-hover-subtle{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-hover-subtle:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(18, 45, 28, .08);
+}
+
+/* Ginger lily flavor page */
+.ginger-page{
+  padding-top: 56px;
+}
+.ginger-hero{
+  margin-bottom: 24px;
+}
+.ginger-subtitle{
+  font-size: 18px;
+  max-width: 720px;
+}
+.ginger-main-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+}
+.ginger-facts-grid{
+  display:grid;
+  gap:12px;
+}
+.ginger-product-photo{
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+.ginger-price-wrap{
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.ginger-price-detail{
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.ginger-process{
+  margin-top: 28px;
+}
+.ginger-process-heading{
+  margin-bottom: 20px;
+}
+.ginger-process-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:16px;
+}
+.process-card{
+  padding:18px;
+  border-radius: 24px;
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.84), rgba(246,250,246,.92));
+  box-shadow: 0 16px 34px rgba(18, 45, 28, .08);
+}
+.process-step{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(47,106,79,.12);
+  color: var(--accent);
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:.04em;
+  margin-bottom:10px;
+}
+.process-card h3{
+  margin-bottom:8px;
+  font-size: 20px;
+}
+.process-card p{
+  min-height: 120px;
+}
+.process-media{
+  margin-top: 14px;
+  overflow:hidden;
+  border-radius: 18px;
+  border:1px solid var(--line);
+  min-height: 170px;
+}
+.process-photo{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+}
+.process-placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.55);
+  color: rgba(85,98,88,.78);
+  font-weight:900;
+}
+
 .placeholder{
   display:flex; align-items:center; justify-content:center;
   min-height: 220px;
@@ -348,6 +459,8 @@ footer{
 @media (max-width: 980px){
   .two{grid-template-columns:1fr}
   .product-card{grid-template-columns:1fr}
+  .ginger-main-grid{grid-template-columns:1fr}
+  .ginger-process-grid{grid-template-columns:1fr 1fr}
   .pricing{grid-template-columns:1fr}
   .order-product{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
@@ -358,4 +471,9 @@ footer{
   nav ul{display:none}
   .mobile-only{display:inline-flex}
   h1{font-size:32px}
+  .ginger-subtitle{font-size:16px}
+  .ginger-product-photo{height:260px}
+  .ginger-price-wrap{align-items:flex-start}
+  .ginger-process-grid{grid-template-columns:1fr}
+  .process-card p{min-height:auto}
 }
